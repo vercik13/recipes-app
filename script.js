@@ -5,6 +5,9 @@ const recipeCloseBtn = document.getElementById("recipe-close-btn");
 
 searchBtn.addEventListener("click", getMealList);
 mealList.addEventListener("click", getMealRecipe);
+recipeCloseBtn.addEventListener("click", () => {
+  mealDetailsContent.parentElement.classList.remove("showRecipe");
+});
 
 function getMealList() {
   let searchInputTxt = document.getElementById("search-input").value.trim();
@@ -63,7 +66,7 @@ function mealRecipeModal(meal) {
     <div class="recipe-meal-img">
       <img src="${meal.strMealThumb}" alt="" />
     </div>
-    <div class="recipe-link">
+    <div class="recipe-btn">
       <a href="${meal.strYoutube}" target="_blank">Watch video</a>
     </div>
   </div>
