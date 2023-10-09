@@ -15,7 +15,7 @@ function getMealList() {
   fetch(
     `https://www.themealdb.com/api/json/v1/1/search.php?s=${searchInputTxt}`
   )
-    .then((response) => response.json())
+    .then((res) => res.json())
     .then((data) => {
       let html = "";
       if (data.meals) {
@@ -48,7 +48,7 @@ function getMealRecipe(e) {
     fetch(
       `https://www.themealdb.com/api/json/v1/1/lookup.php?i=${mealItem.dataset.id}`
     )
-      .then((response) => response.json())
+      .then((res) => res.json())
       .then((data) => {
         mealRecipeModal(data.meals);
       });
